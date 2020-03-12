@@ -1,0 +1,8 @@
+insert into t_mahasiswa
+values("13501001","darmawan p","1083-06-14","jl. cisitu lama no 26"),
+("13501002","albianto","1984-02-20","jl. tubagus ismail no 7"),
+("13501003","rizky yulianto","1983-06-14","asrama bumi ganesha cisitu"),
+("13501004","nova kurniawan","1983-09-23","asrama kidang pananjung cisitu"),
+("13501005","gama melisa","1984-07-03","pelisiran no 17"),
+("13501006","andik taufik","1984-02-12","jl. tubagus ismail no 7"),
+("13501007","anggun hapsari","1984-10-10","komplek taman plesiran no 5");

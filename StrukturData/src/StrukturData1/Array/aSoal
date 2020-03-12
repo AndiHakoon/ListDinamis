@@ -1,0 +1,7 @@
+Buat program salin array A ke Array B dimana array B menyatakan jumlah 2 elemen array A Nilai terakhir dijumlah dengan nilai pertama.
+
+A : 7   3   6   2   5
+B : 10  9   8   7   12
+
+3. diinputkan ukuran baris dan kolom array 2 dimensi. isi rangkaian random uat program yang menentukan nilai terbesar
+dan terkecil beserta posisinya.
