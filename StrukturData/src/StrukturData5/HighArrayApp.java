@@ -107,6 +107,63 @@ class HighArray {               //class high array
             }
         }
     }
+    
+    public void BubbleSort(){
+        int batas, i, n=0;                                  // declaration of variable
+        for (batas = nElement-1; batas > 0; batas--) { // outer loop
+            for (i = 0; i < batas; i++) {              // inner loop
+                n++;
+                System.out.println("i = "+i+" i+1 = "+(i+1));
+                if (arr[i] > arr[i+1]) {                
+                    swap(i,i+1);
+                    display();
+                    
+                }
+            }
+        }
+        System.out.println("\nJumlah perbandingan sebannyak "+n);
+    }
+    
+    public void SelectionSort(){
+        int awal, i, min;
+        
+        for (awal = 0; awal < nElement; awal++) {
+            min = awal;
+            for (i = awal+1; i < nElement; i++) {
+                if (arr[i] < arr[min]) {
+                    min = i;
+                }
+            }
+            swap(awal, min);
+            display();
+        }
+    }
+    
+    public void InsertionSort(){
+        int i, j;
+        
+        for (j= 1; j < nElement; j++) {
+            int temp = arr[j];
+            
+            i = j;
+            
+            while (i > 0 && arr[i-1] >= temp) {  
+                //ystem.out.println("arr[i]= "+arr[i]+" arr[i-1] = "+arr[i-1]);
+                arr[i] = arr[i - 1];
+                display();
+                i--;
+            }
+            arr[i] = temp;
+            //System.out.println("arr[i] = "+arr[i]);
+            display();
+        }
+    }
+    
+    public void swap(int one, int two){
+        int temp = arr[one];
+        arr[one] = arr[two];
+        arr[two] = temp;
+    }
 }
 public class HighArrayApp{
     public static void main(String[] args) {
@@ -120,14 +177,19 @@ public class HighArrayApp{
         arr.insert(55);
         arr.insert(85);
         arr.insert(25);
-        arr.insert(25);
-        arr.insert(30);
-        arr.insert(00);
-        arr.insert(40);
-        arr.insert(90);
+        //arr.insert(25);
+        //arr.insert(30);
+        //arr.insert(00);
+        //arr.insert(40);
+        //arr.insert(90);
         
         arr.display();
-        int key=25;
+        System.out.println("");
+        arr.InsertionSort();
+        System.out.println("");
+        arr.display();
+        
+       /* int key=25;
         if (arr.find(key)) {
             System.out.println(key+" ditemukan");
         }else
@@ -142,6 +204,6 @@ public class HighArrayApp{
         //arr.removeMax();
         arr.noDuplicater();
         arr.display();
-
+        */
     }
 }
