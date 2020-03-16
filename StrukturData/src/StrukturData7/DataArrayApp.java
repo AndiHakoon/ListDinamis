@@ -172,17 +172,21 @@ public class DataArrayApp {
         arr.insert(129, "Yusuf", "Solok");
         arr.insert(122, "Budi", "Bukittinggi");
         
+        System.out.println("Before : ");
         arr.display();
-       // System.out.println("BubbleSort");
-       // arr.BubbleSort();
-       // System.out.println("");
-       // arr.display();
-       // System.out.println("SelectionSort");
-       // arr.SelectionSort();
-       // arr.display();
-        System.out.println("");
+        
+        System.out.println("BubbleSort");
+        arr.BubbleSort();
+        arr.display();
+        
+        System.out.println("SelectionSort");
+        arr.SelectionSort();
+        arr.display();
+        
+        System.out.println("InsertionSort");
         arr.InsertionSort();
         arr.display();
+
 //        long searchkey = 126;
 //        System.out.println("Mencari nobp "+searchkey);
 //        Mahasiswa mhs = arr.find(searchkey);
