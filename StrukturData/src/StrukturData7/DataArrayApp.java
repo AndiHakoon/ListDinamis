@@ -108,7 +108,6 @@ class DataArray{
                 }
             }
         }
-        System.out.println("\nJumlah perbandingan sebannyak "+n);
     }
     
     public void InsertionSort(){
