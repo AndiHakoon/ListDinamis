@@ -13,6 +13,7 @@ package StrukturData7;
  * @author Andi
  * NOBP : 1911082006
  * Kelas : TRPL 1B
+ * Nomor Absen Genap
  */
 
 class Mahasiswa{
@@ -98,7 +99,7 @@ class DataArray{
         }
     }
     
-    public void BubbleSort(){
+    public void BubbleSort(){ //untuk no bp
         int batas, i, n=0;                                  // declaration of variable
         for (batas = nElement-1; batas > 0; batas--) { // outer loop
             for (i = 0; i < batas; i++) {              // inner loop
@@ -110,7 +111,7 @@ class DataArray{
         }
     }
     
-    public void InsertionSort(){
+    public void InsertionSort(){ //untuk nobp
         int i, j;
         
         for (i= 1; i < nElement; i++) 
