@@ -52,7 +52,7 @@ class StackX
         return (top == -1);
     }
 //-------------------------------------------------------------------    
-} // akhir class StackX
+} // end class StackX
 /////////////////////////////////////////////////////////////////////
 public class StackApp 
 {
@@ -61,7 +61,7 @@ public class StackApp
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        StackX theStack = new StackX(10);   // make new stack
+        StackX theStack = new StackX(10);   // buat stack baru
         theStack.push(20);                  // push item ke stack
         theStack.push(40);
         theStack.push(60);
@@ -76,4 +76,4 @@ public class StackApp
         System.out.println("");
     } // end main()
 } // end class StackApp
-/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////

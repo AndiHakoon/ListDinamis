@@ -31,29 +31,29 @@ class StackX
    private char[] stackArray;
    private int top;
 //--------------------------------------------------------------
-   public StackX(int max)    // constructor
+   public StackX(int max)    // konstruktor
       {
       maxSize = max;
       stackArray = new char[maxSize];
       top = -1;
       }
 //--------------------------------------------------------------
-   public void push(char j)  // put item on top of stack
+   public void push(char j)  // meletakkan item ke dalam stack
       {
       stackArray[++top] = j;
       }
 //--------------------------------------------------------------
-   public char pop()         // take item from top of stack
+   public char pop()         // mengambil item dari stack
       {
       return stackArray[top--];
       }
 //--------------------------------------------------------------
-   public char peek()        // peek at top of stack
+   public char peek()        // mengintip stack tertinggi
       {
       return stackArray[top];
       }
 //--------------------------------------------------------------
-   public boolean isEmpty()  // true if stack is empty
+   public boolean isEmpty()  // true jika stack kosong
       {
       return (top == -1);
       }
@@ -65,17 +65,17 @@ class Reverser
    private String input;                // input string
    private String output;               // output string
 //--------------------------------------------------------------
-   public Reverser(String in)           // constructor
+   public Reverser(String in)           // kosntruktor
       { input = in; }
 //--------------------------------------------------------------
-   public String doRev()                // reverse the string
+   public String doRev()                // membalikkan string
       {
-      int stackSize = input.length();   // get max stack size
-      StackX theStack = new StackX(stackSize);  // make stack
+      int stackSize = input.length();   // mendapatkan input max dari stackSize
+      StackX theStack = new StackX(stackSize);  // membuat stack
 
       for(int j=0; j<input.length(); j++)
          {
-         char ch = input.charAt(j);     // get a char from input
+         char ch = input.charAt(j);     // mendapatkan char dari input
          theStack.push(ch);             // push it
          }
       output = "";
@@ -98,8 +98,8 @@ class ReverseApp
          {
          System.out.print("Enter a string: ");
          System.out.flush();
-         input = getString();          // read a string from kbd
-         if( input.equals("") )        // quit if [Enter]
+         input = getString();          // membaca string dari kbd
+         if( input.equals("") )        // keluar jika ditekan [Enter]
             break;
                                        // make a Reverser
          Reverser theReverser = new Reverser(input);

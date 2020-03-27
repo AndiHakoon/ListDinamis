@@ -28,29 +28,29 @@ class StackX
    private char[] stackArray;
    private int top;
 //--------------------------------------------------------------
-   public StackX(int s)       // constructor
+   public StackX(int s)       // konstruktor
       {
       maxSize = s;
       stackArray = new char[maxSize];
       top = -1;
       }
 //--------------------------------------------------------------
-   public void push(char j)  // put item on top of stack
+   public void push(char j)  // letakkan item di atas stack
       {
       stackArray[++top] = j;
       }
 //--------------------------------------------------------------
-   public char pop()         // take item from top of stack
+   public char pop()         // mengambil item dari stack
       {
       return stackArray[top--];
       }
 //--------------------------------------------------------------
-   public char peek()        // peek at top of stack
+   public char peek()        // mengintip stack teratas
       {
       return stackArray[top];
       }
 //--------------------------------------------------------------
-   public boolean isEmpty()    // true if stack is empty
+   public boolean isEmpty()    // true jika stack kosong
       {
       return (top == -1);
       }
@@ -61,29 +61,29 @@ class BracketChecker
    {
    private String input;                   // input string
 //--------------------------------------------------------------
-   public BracketChecker(String in)        // constructor
+   public BracketChecker(String in)        // konstruktor
       { input = in; }
 //--------------------------------------------------------------
    public void check()
       {
-      int stackSize = input.length();      // get max stack size
-      StackX theStack = new StackX(stackSize);  // make stack
+      int stackSize = input.length();      // mendapatkan panjang maksimal dari stack.
+      StackX theStack = new StackX(stackSize);  // membuat stack
 
-      for(int j=0; j<input.length(); j++)  // get chars in turn
+      for(int j=0; j<input.length(); j++)  // mendapatkan char dalam giliran
          {
-         char ch = input.charAt(j);        // get char
+         char ch = input.charAt(j);        // dapatkan char
          switch(ch)
             {
-            case '{':                      // opening symbols
+            case '{':                      // membuka simbol
             case '[':
             case '(':
                theStack.push(ch);          // push them
                break;
 
-            case '}':                      // closing symbols
+            case '}':                      // simbol penutup
             case ']':
             case ')':
-               if( !theStack.isEmpty() )   // if stack not empty,
+               if( !theStack.isEmpty() )   // jika stack tidak kosong,
                   {
                   char chx = theStack.pop();  // pop and check
                   if( (ch=='}' && chx!='{') ||
@@ -91,14 +91,14 @@ class BracketChecker
                       (ch==')' && chx!='(') )
                      System.out.println("Error: "+ch+" at "+j);
                   }
-               else                        // prematurely empty
+               else                        // kosong sebelum waktunya
                   System.out.println("Error: "+ch+" at "+j);
                break;
-            default:    // no action on other characters
+            default:    // tidak ada aksi pada karakter lain
                break;
             }  // end switch
          }  // end for
-      // at this point, all characters have been processed
+      // di titik ini, semua karakter diproses.
       if( !theStack.isEmpty() )
          System.out.println("Error: missing right delimiter");
       }  // end check()
