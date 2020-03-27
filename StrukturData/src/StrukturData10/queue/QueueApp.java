@@ -1,3 +1,5 @@
+package StrukturData10.queue;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
