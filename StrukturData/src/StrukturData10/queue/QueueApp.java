@@ -79,16 +79,20 @@ class Queue
         return nItems;
     }
 //-------------------------------------------------------------------
-    public void looping(int banyak){
+    public void looping(int banyak) throws IOException{
+    int i=0;
     InputStreamReader isr = new InputStreamReader(System.in);
     BufferedReader br = new BufferedReader(isr);
-        System.out.println("Masukkan array sebanyak "+banyak); 
-    for (int i = 0; i < banyak; i++) {
-        try {
+    System.out.println("Masukkan array sebanyak "+banyak+"\t");
+    while(i<banyak) {
+            if (!this.isFull()) {
+            System.out.print("Isi ke-"+(i+1)+" : ");
             this.insert(Integer.parseInt(br.readLine()));
-        } catch (IOException | NumberFormatException e) {
-        }
-            System.out.println("error");
+            i++;
+            }else{
+                System.err.println("Full!");
+                break;
+            }    
         }
     }
 //-------------------------------------------------------------------
@@ -109,7 +113,7 @@ public class QueueApp {
         Queue theQueue = new Queue(5);
         System.out.println("Panjang Array : "+theQueue.ArraySize());
         int banyak = 0;
-        System.out.print("Masukkan banyak array: ");
+        System.out.print("Masukkan banyak array(1-"+theQueue.ArraySize()+"): ");
         banyak = getInt();
         theQueue.looping(banyak);
         theQueue.display();
@@ -120,9 +124,10 @@ public class QueueApp {
           theQueue.remove();
         }
         
-        System.out.print("Masukkan banyak array: ");
+        System.out.print("Masukkan banyak array(1-"+theQueue.ArraySize()+"): ");
         banyak = getInt();
         theQueue.looping(banyak);
+                
         
         while(!theQueue.isEmpty())
         {
