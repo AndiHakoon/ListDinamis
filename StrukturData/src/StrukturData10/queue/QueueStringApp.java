@@ -1,10 +1,3 @@
-package StrukturData10.queue;
-
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 /*
  * Copyright 2020 Andi.
  *
@@ -21,28 +14,37 @@ import java.io.InputStreamReader;
  * limitations under the License.
  */
 
+package StrukturData10.queue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 /**
- *
- * @author Andi
+ * @author Andi_Irham
+ * @author Hakkan_Syukri
+ * 
  */
-class Queue
+
+class Queues
 {
     private int maxSize;
-    private long[] queArray;
+    private String[] queArray;
     private int front;
     private int rear;
     private int nItems;
 //-------------------------------------------------------------------
-    public Queue(int s)
+    public Queues(int s)
     {
         maxSize = s;
-        queArray = new long[maxSize];
+        queArray = new String[maxSize];
         front = 0;
         rear = -1;
         nItems = 0;  
     }
 //-------------------------------------------------------------------
-    public void insert(long j)
+    public void insert(String j)
     {
         if(rear == maxSize-1)
             rear = -1;
@@ -50,16 +52,26 @@ class Queue
         nItems++;
     }
 //-------------------------------------------------------------------    
-    public long remove()
+    public String remove()
     {
-        long temp = queArray[front++];
+        String temp = queArray[front++];
         if(front == maxSize)
             front = 0;
         nItems--;
+        System.out.println(queArray[front]+" keluar Antrian !");
         return temp;
     }
 //-------------------------------------------------------------------
-    public long peekFront()
+    public void removeloop(int n)
+    {
+        for (int i = 0; i < n; i++) {
+            System.out.println("Satu per satu keluar antrian");
+            this.remove();
+            this.display();
+        }
+    }
+//-------------------------------------------------------------------
+    public String peekFront()
     {
         return queArray[front];
     }
@@ -87,13 +99,14 @@ class Queue
     while(!this.isFull()) {
             if (i<banyak) {
             System.out.print("Isi ke-"+(i+1)+" : ");
-            this.insert(Integer.parseInt(br.readLine()));
+            this.insert(br.readLine());
             i++;
             }else{
                 System.err.println("Full");
             }    
         }
     }
+//-------------------------------------------------------------------
 //-------------------------------------------------------------------
     public int ArraySize(){
         return maxSize;
@@ -107,41 +120,22 @@ class Queue
         System.out.println("");
     }
 }// end class Queue
-public class QueueApp {
-    public static void main(String[] args) throws IOException {
-        Queue theQueue = new Queue(5);
-        System.out.println("Panjang Array : "+theQueue.ArraySize());
-        int banyak = 0;
-        System.out.print("Masukkan banyak array(1-"+theQueue.ArraySize()+"): ");
-        banyak = getInt();
-        theQueue.looping(banyak);
-        theQueue.display();
+
+public class QueueStringApp {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException{
+        // TODO code application logic here
+        Scanner in = new Scanner(System.in);
+        int p, n;
+        System.out.print("Panjang Array : "); p = in.nextInt();
+        Queues queue = new Queues(p);
+        System.out.println("Masukkan Array sebanyak ");n = in.nextInt();
+        queue.looping(n);
         
-        System.out.print("Dihapus berapa? ");
-        banyak = getInt();
-        for (int i = 0; i < banyak; i++) {
-          theQueue.remove();
-        }
         
-        System.out.print("Masukkan banyak array(1-"+theQueue.ArraySize()+"): ");
-        banyak = getInt();
-        theQueue.looping(banyak);
-                
-        
-        while(!theQueue.isEmpty())
-        {
-            long n = theQueue.remove();
-            System.out.print(n);
-            System.out.print(" ");
-        }
-        System.out.println("");
     }
-    
-    public static int getInt() throws IOException
-    {
-        InputStreamReader isr = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(isr);
-        int i =  Integer.parseInt(br.readLine());
-        return i;
-    }
+
 }
