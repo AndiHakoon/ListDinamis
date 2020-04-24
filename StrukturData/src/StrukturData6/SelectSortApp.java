@@ -29,9 +29,9 @@ class ArraySel
     public void display()               // displays array contents
     {
         for (int i = 0; i < nElems; i++) {  // for each element,
-            System.out.println(a[i]+" ");   // display it
-        System.out.println("");
+            System.out.print(a[i]+" ");   // display it
         }
+        System.out.println("");
     }
 //-------------------------------------------------------------
     public void selectionSort()
@@ -40,16 +40,19 @@ class ArraySel
         
         for (out=0; out < nElems-1; out++) // outer loop
         {
+            System.out.print("out = "+out+"\n");
             min = out;                     // minimum
             for (in = out+1; in < nElems; in++){ // inner loop
                 if(a[in] < a[min]){              // if min greater,
                     min = in;}                   // we have a new min
+                System.out.print("in = "+in+"\t");
             }
             swap(out, min);                      // swap them
             for (int i = 0; i < nElems; i++) {
              System.out.print(a[i]+" ");   
             }
         } // end for(out)
+        System.out.println();
     } // end selectionSort();
 //-------------------------------------------------------------
     public void swap(int one, int two)
@@ -72,16 +75,16 @@ public class SelectSortApp {
         ArraySel arr;                   // reference to array
         arr = new ArraySel(maxSize);     // create the array
         
-        arr.insert(77);                 // insert 10 items
-        arr.insert(99);
-        arr.insert(44);
-        arr.insert(55);
-        arr.insert(22);
-        arr.insert(88);
-        arr.insert(11);
-        arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
+       arr.insert(1);//arr.insert(77);                 // insert 10 items
+       arr.insert(7);// arr.insert(99);
+       arr.insert(3); //arr.insert(44);
+       arr.insert(6);// arr.insert(55);
+       arr.insert(2);// arr.insert(22);
+       arr.insert(4);// arr.insert(88);
+       arr.insert(9);// arr.insert(11);
+       // arr.insert(00);
+       // arr.insert(66);
+       // arr.insert(33);
         
         arr.display();                  // display items
         arr.selectionSort();            // selection sort them

@@ -34,18 +34,23 @@ class ArrayBub
     public void display() // display array contents
     {
         for (int i = 0; i < nElems; i++) {  // for each element,
-            System.out.println(a[i]+" ");   // display it
-            System.out.println("");    
+            System.out.print(a[i]+" ");   // display it
         }
+        System.out.println("");
     }
 //-------------------------------------------------------------
     public void bubbleSort()
     {
         int out, in;
         for(out=nElems-1;out>1;out--)   // outer loop (backward)
+            System.out.print("Out = "+out+"\n");
+            this.display();
             for(in=0;in<out;in++)       // inner loop (forward)
+                System.out.println("in = "+in+"\t");
+                
                 if(a[in]>a[in+1])       // out of order?
                     swap(in, in+1);     // swap them
+                  
     } // end bubbleSort()
 //-------------------------------------------------------------
     public void swap(int one, int two)
@@ -64,18 +69,23 @@ public class BubbleSortApp {
         ArrayBub arr;                   // reference to array
         arr = new ArrayBub(maxSize);    // create the array
         
-        arr.insert(77);                  // insert 10 items
-        arr.insert(99);
-        arr.insert(44);
-        arr.insert(55);
-        arr.insert(22);
-        arr.insert(88);
-        arr.insert(11);
-        arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
-        
-        arr.display();                  // bubble sort them
+arr.insert(5);
+arr.insert(2);
+arr.insert(4);
+arr.insert(1);
+arr.insert(3);
+//        arr.insert(77);                  // insert 10 items
+//        arr.insert(99);
+//        arr.insert(44);
+//        arr.insert(55);
+//        arr.insert(22);
+//        arr.insert(88);
+//        arr.insert(11);
+//        arr.insert(00);
+//        arr.insert(66);
+//        arr.insert(33);
+//        
+        //arr.display();                  // bubble sort them
         arr.bubbleSort();               // bubble sort them
         arr.display();                  // display them again
     } // end main()
