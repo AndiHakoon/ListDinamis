@@ -1,4 +1,4 @@
-package StrukturData15;
+package StrukturData15.HashChain2;
 
 
 import java.io.BufferedReader;
